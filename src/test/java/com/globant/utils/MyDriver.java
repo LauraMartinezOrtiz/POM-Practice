@@ -1,21 +1,18 @@
 package com.globant.utils;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class MyDriver {
+
     private WebDriver driver;
 
-    public MyDriver(String browser){
-        if ("firefox".equals(browser)){
-            driver = new FirefoxDriver();
-        } else{
-            String path = System.getProperty("user.dir");
-            System.out.println(path);
-            System.setProperty("webdriver.chrome.driver",path+"\\drivers\\chromedriver.exe");
-            driver = new ChromeDriver();
-        }
+    public MyDriver() {
+        WebDriverManager.chromedriver().setup();
+        this.driver = new ChromeDriver();
+        this.driver.manage().window().maximize();
+        this.driver.navigate().to("https://www.saucedemo.com/");
     }
 
     public WebDriver getDriver() {

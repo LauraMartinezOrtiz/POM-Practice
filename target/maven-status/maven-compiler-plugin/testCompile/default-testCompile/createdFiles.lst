@@ -1,0 +1,13 @@
+com\globant\pages\LogoutPage.class
+com\globant\pages\LoginPage.class
+com\globant\utils\MyDriver.class
+com\globant\utils\basePage\BasePage.class
+com\globant\pages\CheckoutCompletePage.class
+com\globant\tests\RemoveProductTest.class
+com\globant\pages\ProductListPage.class
+com\globant\tests\LogoutTest.class
+com\globant\pages\CheckoutOverviewPage.class
+com\globant\tests\PurchaseProductTest.class
+com\globant\pages\CheckoutInfoPage.class
+com\globant\pages\CartPage.class
+com\globant\utils\baseTest\BaseTest.class

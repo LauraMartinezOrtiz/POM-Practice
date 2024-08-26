@@ -11,7 +11,7 @@ import java.time.Duration;
 public class BasePage {
     protected WebDriver driver;
 
-    public BasePage(WebDriver driver, WebDriverWait wait) {
+    public BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -24,5 +24,11 @@ public class BasePage {
         WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
         webDriverWait.until(ExpectedConditions.visibilityOf(element));
         return element.isDisplayed();
+    }
+
+    protected void isElementClickable(WebElement element){
+        WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(element));
+        element.click();
     }
 }
