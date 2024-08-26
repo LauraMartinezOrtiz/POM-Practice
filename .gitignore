@@ -1,5 +1,15 @@
 
+target/
+
 .idea
+.idea/*
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
 
 # Compiled class file
 *.class
