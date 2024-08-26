@@ -15,6 +15,9 @@ public class LoginPage extends BasePage {
     @FindBy(id = "login-button")
     private WebElement loginBtn;
 
+    @FindBy(css = ".login_wrapper")
+    private WebElement loginWrapper;
+
     public void setUsername(String username) {
         this.usernameTxt.sendKeys(username);
     }
@@ -24,7 +27,7 @@ public class LoginPage extends BasePage {
     }
 
     public ProductListPage clickLogin() {
-        loginBtn.click();
+        super.isElementClickable(loginBtn);
         return new ProductListPage(super.driver);
     }
 

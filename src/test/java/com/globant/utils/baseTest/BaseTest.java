@@ -9,6 +9,14 @@ public class BaseTest {
 
     private MyDriver driver;
 
+    public LoginPage loadFirstPage() {
+        return new LoginPage(driver.getDriver());
+    }
+
+    public ProductListPage loadProductListPage() {
+        return new ProductListPage(driver.getDriver());
+    }
+
     @BeforeTest
     protected void initializeDriver() {
         driver = new MyDriver();
@@ -24,11 +32,6 @@ public class BaseTest {
         loginPage.setPassword(password);
 
         return loginPage.clickLogin();
-
-    }
-
-    public LoginPage loadFirstPage() {
-        return new LoginPage(driver.getDriver());
     }
 
     @AfterTest
