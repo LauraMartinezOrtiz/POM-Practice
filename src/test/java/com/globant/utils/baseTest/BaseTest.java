@@ -1,19 +1,37 @@
 package com.globant.utils.baseTest;
 
+import com.globant.pages.LoginPage;
+import com.globant.pages.ProductListPage;
 import com.globant.utils.MyDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
 public class BaseTest {
 
-    MyDriver driver;
+    private MyDriver driver;
 
-    @BeforeTest()
+    @BeforeTest
     protected void initializeDriver() {
         driver = new MyDriver();
+        driver.getDriver().navigate().to("https://www.saucedemo.com/");
     }
 
-    @AfterMethod()
+    @BeforeMethod
+    @Parameters({"username", "password"})
+    public ProductListPage checkSuccessfulLogin(String username, String password) {
+        LoginPage loginPage = loadFirstPage();
+
+        loginPage.setUsername(username);
+        loginPage.setPassword(password);
+
+        return loginPage.clickLogin();
+
+    }
+
+    public LoginPage loadFirstPage() {
+        return new LoginPage(driver.getDriver());
+    }
+
+    @AfterTest
     protected void closeDriver() {
         driver.getDriver().close();
     }

@@ -7,13 +7,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
     @FindBy(name = "user-name")
-    WebElement usernameTxt;
+    private WebElement usernameTxt;
 
     @FindBy(id = "password")
-    WebElement passwordTxt;
+    private WebElement passwordTxt;
 
-    @FindBy(className = "submit-button btn_action")
-    WebElement loginBtn;
+    @FindBy(id = "login-button")
+    private WebElement loginBtn;
 
     public void setUsername(String username) {
         this.usernameTxt.sendKeys(username);
@@ -24,11 +24,12 @@ public class LoginPage extends BasePage {
     }
 
     public ProductListPage clickLogin() {
-        this.loginBtn.click();
+        loginBtn.click();
         return new ProductListPage(super.driver);
     }
 
     public LoginPage(WebDriver driver) {
         super(driver);
     }
+
 }
