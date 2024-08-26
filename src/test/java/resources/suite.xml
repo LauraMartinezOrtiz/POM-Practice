@@ -12,4 +12,10 @@
             <class name="com.globant.tests.PurchaseProductTest"/>
         </classes>
     </test>
+
+    <test verbose="1" name="Logout">
+        <classes>
+            <class name="com.globant.tests.LogoutTest"/>
+        </classes>
+    </test>
 </suite>

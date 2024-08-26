@@ -10,6 +10,8 @@ public class CartPage extends BasePage {
     @FindBy(id = "checkout")
     private WebElement checkoutBtn;
 
+    //@FindBy()
+
     public CheckoutInfoPage clickCheckout() {
         super.isElementClickable(checkoutBtn);
         return new CheckoutInfoPage(super.driver);

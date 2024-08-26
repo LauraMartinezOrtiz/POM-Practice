@@ -1,9 +1,6 @@
 package com.globant.tests;
 
-import com.globant.pages.CartPage;
-import com.globant.pages.CheckoutInfoPage;
-import com.globant.pages.CheckoutOverviewPage;
-import com.globant.pages.ProductListPage;
+import com.globant.pages.*;
 import com.globant.utils.baseTest.BaseTest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,13 +19,16 @@ public class PurchaseProductTest extends BaseTest {
         productListPage.addProduct(2);
 
         CartPage cartPage = productListPage.selectCartBtn();
-        CheckoutInfoPage checkoutInfoPage = cartPage.clickCheckout();
 
+        CheckoutInfoPage checkoutInfoPage = cartPage.clickCheckout();
         checkoutInfoPage.setFirstName(firstName);
         checkoutInfoPage.setLastName(lastName);
         checkoutInfoPage.setPostalCode(postalCode);
 
         CheckoutOverviewPage checkoutOverviewPage = checkoutInfoPage.continueToOverview();
+
+        CheckoutCompletePage checkoutCompletePage = checkoutOverviewPage.continueToComplete();
+        Assert.assertEquals(checkoutCompletePage.getCompleteMsg(), "Thank you for your order!");
     }
 
 }

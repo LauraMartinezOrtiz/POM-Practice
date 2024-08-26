@@ -34,8 +34,8 @@ public class BaseTest {
         return loginPage.clickLogin();
     }
 
-    @AfterTest
-    protected void closeDriver() {
-        driver.getDriver().close();
-    }
+//    @AfterTest
+//    protected void closeDriver() {
+//        driver.getDriver().close();
+//    }
 }
