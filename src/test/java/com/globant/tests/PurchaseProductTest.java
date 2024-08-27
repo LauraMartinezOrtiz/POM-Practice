@@ -10,13 +10,11 @@ import org.testng.annotations.Test;
 
 public class PurchaseProductTest extends BaseTest {
 
-    Logger log = LoggerFactory.getLogger(PurchaseProductTest.class);
-
     @Test
-    @Parameters({"firstName", "lastName", "postalCode"})
-    public void checkSuccessfulPurchase(String firstName, String lastName, String postalCode){
+    @Parameters({"item", "firstName", "lastName", "postalCode"})
+    public void checkSuccessfulPurchase(int item, String firstName, String lastName, String postalCode){
         ProductListPage productListPage = super.loadProductListPage();
-        productListPage.addProduct(2);
+        productListPage.addProduct(item);
 
         CartPage cartPage = productListPage.selectCartBtn();
 

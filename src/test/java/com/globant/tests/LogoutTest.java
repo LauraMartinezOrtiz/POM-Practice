@@ -7,9 +7,9 @@ import org.testng.annotations.Test;
 
 public class LogoutTest extends BaseTest {
     @Test
-    public void checkSuccessfulLogout(){
+    public void checkSuccessfulLogout() {
         ProductListPage productListPage = super.loadProductListPage();
-        productListPage.goBackToLogin();
-        Assert.assertTrue(productListPage.checkLoginPage());
+        LoginPage loginPage = productListPage.goBackToLogin();
+        Assert.assertTrue(loginPage.checkLoginPage());
     }
 }

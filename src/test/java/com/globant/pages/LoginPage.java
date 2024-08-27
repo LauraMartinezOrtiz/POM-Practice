@@ -15,8 +15,8 @@ public class LoginPage extends BasePage {
     @FindBy(id = "login-button")
     private WebElement loginBtn;
 
-    @FindBy(css = ".login_wrapper")
-    private WebElement loginWrapper;
+    @FindBy(css = ".login_credentials_wrap-inner")
+    private WebElement loginCredentials;
 
     public void setUsername(String username) {
         this.usernameTxt.sendKeys(username);
@@ -24,6 +24,10 @@ public class LoginPage extends BasePage {
 
     public void setPassword(String password) {
         this.passwordTxt.sendKeys(password);
+    }
+
+    public boolean checkLoginPage(){
+        return super.isElementDisplayed(loginCredentials);
     }
 
     public ProductListPage clickLogin() {
