@@ -13,7 +13,7 @@ public class RemoveProductTest extends BaseTest {
     Logger log = LoggerFactory.getLogger(RemoveProductTest.class);
 
     @Test(dataProvider = "productIndexes", dataProviderClass = ProductData.class)
-    public void checkProductsSuccessfullyRemoved(int[] productIndexes){
+    public void checkProductsSuccessfullyRemoved(int[] productIndexes) {
         ProductListPage productListPage = super.loadProductListPage();
         productListPage.addProducts(productIndexes);
 

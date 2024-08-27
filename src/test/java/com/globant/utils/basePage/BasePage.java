@@ -31,7 +31,8 @@ public class BasePage {
         WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
         webDriverWait.until(ExpectedConditions.visibilityOfAllElements(elements));
     }
-    protected void isElementClickable(WebElement element){
+
+    protected void isElementClickable(WebElement element) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();

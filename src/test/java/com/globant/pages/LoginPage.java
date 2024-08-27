@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
+
     @FindBy(name = "user-name")
     private WebElement usernameTxt;
 
@@ -26,7 +27,7 @@ public class LoginPage extends BasePage {
         this.passwordTxt.sendKeys(password);
     }
 
-    public boolean checkLoginPage(){
+    public boolean checkLoginPage() {
         return super.isElementDisplayed(loginCredentials);
     }
 
@@ -38,5 +39,4 @@ public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-
 }

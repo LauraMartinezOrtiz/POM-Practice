@@ -12,7 +12,7 @@ public class PurchaseProductTest extends BaseTest {
 
     @Test
     @Parameters({"item", "firstName", "lastName", "postalCode"})
-    public void checkSuccessfulPurchase(int item, String firstName, String lastName, String postalCode){
+    public void checkSuccessfulPurchase(int item, String firstName, String lastName, String postalCode) {
         ProductListPage productListPage = super.loadProductListPage();
         productListPage.addProduct(item);
 
